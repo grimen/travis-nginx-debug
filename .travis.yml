@@ -13,6 +13,7 @@ before_install:
     - sudo apt-get update
     - sudo apt-get install -y --force-yes nginx-extras
     - sudo mkdir -p /tmp/nginx_proxy/cache
+    - sudo mkdir -p /var/log/nginx
 
 # addons:
 #   apt:
