@@ -21,7 +21,8 @@ before_install:
 #     update: true
 
 script:
-    - nginx -g 'user www www; daemon off;'
+    - nginx -c ./nginx.conf
+    # - nginx -g 'user www www; daemon off;'
 
 cache:
     yarn: true
