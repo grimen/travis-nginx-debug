@@ -1,0 +1,28 @@
+language: node_js
+
+env:
+    - NODE_ENV=test
+
+node_js:
+    - 8
+
+before_install:
+    - apt-get update
+    - apt-get install -y software-properties-common
+    - add-apt-repository -y ppa:nginx/stable
+    - apt-get update
+    - apt-get install -y --force-yes nginx-extras
+    - mkdir -p /tmp/nginx_proxy/cache
+
+# addons:
+#   apt:
+#     update: true
+
+script:
+    - echo "Yay!"
+
+cache:
+    yarn: true
+
+notifications:
+    email: false
