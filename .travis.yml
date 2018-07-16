@@ -13,7 +13,7 @@ before_install:
     - sudo apt-get update
     - sudo apt-get install -y --force-yes nginx-extras
     - sudo mkdir -p /var/log/nginx
-    - sudo chmod -R $USER /var/log/nginx
+    - sudo chown -R $USER /var/log/nginx
 
 # addons:
 #   apt:
