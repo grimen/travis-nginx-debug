@@ -14,13 +14,14 @@ before_install:
     - sudo apt-get install -y --force-yes nginx-extras
     - sudo mkdir -p /tmp/nginx_proxy/cache
     - sudo mkdir -p /var/log/nginx
+    - sudo mkdir -p /var/log/nginx
 
 # addons:
 #   apt:
 #     update: true
 
 script:
-    - nginx -g 'daemon off;'
+    - nginx -g 'user www www; daemon off;'
 
 cache:
     yarn: true
