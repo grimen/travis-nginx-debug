@@ -1,30 +1,16 @@
 language: node_js
 
-sudo: false
-dist: trusty
-
 env:
     - NODE_ENV=test
 
 node_js:
     - 8
 
-before_install:
-    - sudo apt-get update
-    - sudo apt-get install -y software-properties-common
-    - sudo add-apt-repository -y ppa:nginx/stable
-    - sudo apt-get update
-    - sudo apt-get install -y --force-yes nginx-extras
-    - sudo mkdir -p /var/log/nginx
-    - sudo chown -R $USER /var/log/nginx
-
-# addons:
-#   apt:
-#     update: true
+install:
+    - make install
 
 script:
-    - nginx -c $PWD/nginx.conf
-    # - nginx -g 'user www www; daemon off;'
+    - make start
 
 cache:
     yarn: true
